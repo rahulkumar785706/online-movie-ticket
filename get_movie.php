@@ -1,5 +1,6 @@
 <?php
-include('db/db.php');
+session_start();
+include('../db/db.php');
 //Database connection selection
 $db=new db();
 $db->db_connect();
@@ -7,7 +8,7 @@ $db->db_select();
 
 $loc_id = $_REQUEST['loc_id'];
 
-$sql = "SELECT movies.name,movies.id,todate FROM assign_show join movies on assign_show.fk_movie_id = movies.id where assign_show.fk_location_id='$loc_id' order by movies.id desc";
+$sql = "SELECT movies.name,movies.id,todate FROM assign_show join movies on assign_show.fk_movie_id = movies.id where assign_show.fk_location_id='$loc_id'";
 $result = mysql_query($sql);
 
 $date=date('Y-m-d');

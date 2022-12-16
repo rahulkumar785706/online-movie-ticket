@@ -8,15 +8,15 @@ $(document).ready(function(){
 		{
 
 			img_src = $(this).attr('src');
-			if(img_src == 'images/available.png')
+			if(img_src == '../images/available.png')
 			{
-				if(noseats == 6)
+				if(noseats == 10)
 				{
-					alert('You can only select 6 seats');
+					alert('You can only select 10 seats');
 				}
 				else
 				{
-					$(this).attr('src','images/selected.png');
+					$(this).attr('src','../images/selected.png');
 					img_id = $(this).attr('id');
 					charge_id = 'charges'+img_id;
 					seatnameid = 'seatname'+img_id;
@@ -36,7 +36,7 @@ $(document).ready(function(){
 			}
 			else
 			{
-				$(this).attr('src','images/available.png');
+				$(this).attr('src','../images/available.png');
 				img_id = $(this).attr('id');
 				charge_id = 'charges'+img_id;
 				seatnameid = 'seatname'+img_id;
@@ -108,10 +108,10 @@ var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 		var get_imgs = $('.seat img').length;
 		flag = false;
-		myform = "<form method='post' action='confirm-booking.php' name='bookform' id='bookform'>";
+		myform = "<form method='post' action='../confirm-booking.php' name='bookform' id='bookform'>";
 		for(i = 0; i<get_imgs; i++)
 		{
-			if($('.seat img').eq(i).attr('src') == 'images/selected.png')
+			if($('.seat img').eq(i).attr('src') == '../images/selected.png')
 			{
 				flag = true;
 				seat_id = $('.seat img').eq(i).attr('id');
@@ -174,7 +174,6 @@ $(document).ready(function(){
 			onLoad: function() 
 			{ 
             $('#sign_up').find('input:first').focus();
-            $('#user').remove();
             }
 			});
 			e.preventDefault();

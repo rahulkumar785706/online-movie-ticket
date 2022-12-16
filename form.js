@@ -54,7 +54,6 @@ function vaidateTheater()
 /* script for movie search form */
 $(document).ready(function()
 {
-
 	$("#location1").select2();
 	$('#selectmovies').select2();
 	$('#mdate').select2();
@@ -62,9 +61,7 @@ $(document).ready(function()
 	$('#selectmovies').prop('disabled', 'disabled');
 	$('#mdate').prop('disabled', 'disabled');
 
-
 	$("#location1").change(function(){
-		$.blockUI({ css: { backgroundColor: '#333', color: '#3399ff' } }); 
 		loc_id= $("#location1").val();
 		var params = "loc_id="+loc_id;
 		var url = "get_movie.php";
@@ -76,9 +73,9 @@ $(document).ready(function()
 		
 		success: function(data) {
 				$('#selectmovies').html(data);
+
 				if($('#selectmovies').html(data))
 				{
-					$.unblockUI();
 					$('#selectmovies').removeAttr('disabled');
 				}
 				else
@@ -90,38 +87,6 @@ $(document).ready(function()
 			});
 		});
 
-	$("#selectmovies").change(function(){
-
-
-        
-         $.blockUI({ css: { backgroundColor: '#333', color: '#3399ff' } }); 
-
-		mov_id= $("#selectmovies").val();
-		loc_id= $("#location1").val();
-		var params = "mov_id="+mov_id+"&loc_id="+loc_id;
-		var url = "get_date.php";
-		$.ajax({
-		type: 'POST',
-		url: url,
-		dataType: 'html',
-		data: params,
-		
-		success: function(data) {
-				$('#mdate').html(data);
-				if($('#mdate').html(data))
-				{
-					$.unblockUI();
-					$('#mdate').removeAttr('disabled');
-
-				}
-				else
-				{
-					$('#mdate').prop('disabled', 'disabled');
-					return false;
-				}
-			}
-			});
-		});
 
 
 
