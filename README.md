@@ -46,8 +46,7 @@ Before forking this repo I would like to clarify few things
 3) Clone this repo into htdocs of xampp
 3) Download cinema_choodu.sql file in this repo and import to phpmyadmin or mysql and simple run it.
 
-if any issues feel free to mail me vydyas@gmail.com
-my linkedin : https://www.linkedin.com/in/siddhucse/
+if any issues feel free to mail me rahulkumar53500@gmail.com
 
 # Admin panel screenshots of script
 
